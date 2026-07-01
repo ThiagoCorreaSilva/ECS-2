@@ -3,19 +3,35 @@
 #include <optional>
 #include <memory>
 
-#include "EntityManager.hpp"
-#include "ComponentsManager.hpp"
+#include "../headers/Managers/EntityManager.hpp"
+#include "../headers/Managers/ComponentsManager.hpp"
+#include "../headers/Managers/SystemsManager.hpp"
 
 class ECS
 {
 private:
     static std::unique_ptr<EntityManager> entitiesManager;
     static std::unique_ptr<ComponentsManager> componentsManager;
+    static std::unique_ptr<SystemsManager> systemsManager;
 
 public:
     static std::optional<Entity> CreateEntity()
     {
-        return entitiesManager->CreateEntity();
+        auto entity = entitiesManager->CreateEntity();
+        if (!entity.has_value())
+        {
+            return std::nullopt;
+        }
+
+        auto transform = componentsManager->AddComponent<Components::Transform>(entity.value());
+        auto render = componentsManager->AddComponent<Components::Render>(entity.value());
+
+        if (!transform.has_value() || !render.has_value())
+        {
+            return std::nullopt;
+        }
+
+        return entity;
     }
 
     static void DeleteEntity(Entity& entity)
@@ -53,7 +69,13 @@ public:
     {   
         return componentsManager->RemoveComponent<T>(entity);
     }
+
+    static void UpdateSystem(const System& system)
+    {
+        systemsManager->UpdateSystem(system);
+    }
 };
 
 std::unique_ptr<EntityManager> ECS::entitiesManager = std::make_unique<EntityManager>();
-std::unique_ptr<ComponentsManager> ECS::componentsManager = std::make_unique<ComponentsManager>(); 
+std::unique_ptr<ComponentsManager> ECS::componentsManager = std::make_unique<ComponentsManager>();
+std::unique_ptr<SystemsManager> systemsManager = std::make_unique<SystemsManager>();

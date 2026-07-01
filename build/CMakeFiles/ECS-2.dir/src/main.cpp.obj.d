@@ -184,12 +184,12 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/ranges_algobase.h \
  C:/msys64/ucrt64/include/c++/16.1.0/pstl/glue_memory_defs.h \
  C:/msys64/ucrt64/include/c++/16.1.0/pstl/execution_defs.h \
- C:/Users/mathe/Projects/ECS-2/headers/EntityManager.hpp \
+ C:/Users/mathe/Projects/ECS-2/headers/Managers/EntityManager.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/vector \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_vector.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_bvector.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/vector.tcc \
- C:/Users/mathe/Projects/ECS-2/headers/ComponentsManager.hpp \
+ C:/Users/mathe/Projects/ECS-2/headers/Managers/ComponentsManager.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/any \
  C:/msys64/ucrt64/include/c++/16.1.0/algorithm \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_algo.h \
@@ -203,4 +203,5 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/hashtable.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/hashtable_policy.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/node_handle.h \
- C:/Users/mathe/Projects/ECS-2/headers/Components.hpp
+ C:/Users/mathe/Projects/ECS-2/headers/Components.hpp \
+ C:/Users/mathe/Projects/ECS-2/headers/Managers/SystemsManager.hpp

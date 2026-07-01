@@ -1,6 +1,6 @@
 CMakeFiles/ECS-2.dir/src/EntityManager.cpp.obj: \
  C:\Users\mathe\Projects\ECS-2\src\EntityManager.cpp \
- C:/Users/mathe/Projects/ECS-2/headers/EntityManager.hpp \
+ C:/Users/mathe/Projects/ECS-2/headers/Managers/EntityManager.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/vector \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++config.h \

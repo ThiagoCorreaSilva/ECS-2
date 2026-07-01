@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cassert>
 
-#include "ECS.hpp"
+#include "../headers/ECS.hpp"
 
 constexpr int WIDTH = 1280;
 constexpr int HEIGHT = 720;
