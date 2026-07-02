@@ -112,8 +112,7 @@ ECS__2_EXTERNAL_OBJECTS =
 ECS-2.exe: CMakeFiles/ECS-2.dir/src/EntityManager.cpp.obj
 ECS-2.exe: CMakeFiles/ECS-2.dir/src/main.cpp.obj
 ECS-2.exe: CMakeFiles/ECS-2.dir/build.make
-ECS-2.exe: C:/vcpkg/installed/x64-windows/debug/lib/raylib.lib
-ECS-2.exe: C:/vcpkg/installed/x64-windows/debug/lib/raylib.lib
+ECS-2.exe: _deps/raylib-build/raylib/libraylib.a
 ECS-2.exe: CMakeFiles/ECS-2.dir/linkLibs.rsp
 ECS-2.exe: CMakeFiles/ECS-2.dir/objects1.rsp
 ECS-2.exe: CMakeFiles/ECS-2.dir/link.txt

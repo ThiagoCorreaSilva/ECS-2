@@ -8,8 +8,21 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 file(GLOB_RECURSE SOURCES src/*.cpp)
 file(GLOB_RECURSE HEADERS headers/*.hpp)
 
-find_package(raylib CONFIG REQUIRED)
-include_directories("C:/vcpkg/installed/x64-windows/include")
+# find_package(raylib CONFIG REQUIRED)
+# include_directories("C:/vcpkg/installed/x64-windows/include")
+
+# Dependencies
+set(RAYLIB_VERSION 6.0)
+
+include(FetchContent)
+FetchContent_Declare(
+    raylib
+    DOWNLOAD_EXTRACT_TIMESTAMP OFF
+    URL https://github.com/raysan5/raylib/archive/refs/tags/${RAYLIB_VERSION}.tar.gz
+)
+
+FetchContent_MakeAvailable(raylib)
+
 include_directories(${CMAKE_SOURCE_DIR}/headers)
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})

@@ -13265,3 +13265,171 @@ events:
         - "C:/Program Files (x86)/ECS-2"
       CMAKE_FIND_ROOT_PATH: "C:/vcpkg/installed/x64-windows/debug;C:/vcpkg/installed/x64-windows"
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "build/_deps/raylib-src/cmake/AddIfFlagCompiles.cmake:3 (CHECK_C_COMPILER_FLAG)"
+      - "build/_deps/raylib-src/cmake/CompilerFlags.cmake:5 (add_if_flag_compiles)"
+      - "build/_deps/raylib-src/CMakeLists.txt:27 (include)"
+    checks:
+      - "Performing Test COMPILER_HAS_THOSE_TOGGLES"
+    directories:
+      source: "C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-ja3nxr"
+      binary: "C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-ja3nxr"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/mathe/Projects/ECS-2/build/_deps/raylib-src/cmake"
+      VCPKG_INSTALLED_DIR: "C:/vcpkg/installed"
+      VCPKG_PREFER_SYSTEM_LIBS: "OFF"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "C:/vcpkg"
+    buildResult:
+      variable: "COMPILER_HAS_THOSE_TOGGLES"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-ja3nxr'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_62f47/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_62f47.dir\\build.make CMakeFiles/cmTC_62f47.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-ja3nxr'
+        Building C object CMakeFiles/cmTC_62f47.dir/src.c.obj
+        C:\\msys64\\ucrt64\\bin\\gcc.exe -DCOMPILER_HAS_THOSE_TOGGLES  -Werror=pointer-arith -o CMakeFiles\\cmTC_62f47.dir\\src.c.obj -c C:\\Users\\mathe\\Projects\\ECS-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ja3nxr\\src.c
+        Linking C executable cmTC_62f47.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_62f47.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_62f47.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_62f47.dir/objects.a @CMakeFiles\\cmTC_62f47.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_62f47.dir/objects.a -Wl,--no-whole-archive -o cmTC_62f47.exe -Wl,--out-implib,libcmTC_62f47.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_62f47.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-ja3nxr'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/FindThreads.cmake:160 (check_c_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/FindThreads.cmake:226 (_threads_check_libc)"
+      - "C:/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
+      - "build/_deps/raylib-src/src/external/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-krasum"
+      binary: "C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-krasum"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/mathe/Projects/ECS-2/build/_deps/raylib-src/cmake;C:/Users/mathe/Projects/ECS-2/build/_deps/raylib-src/src/external/glfw/CMake/modules"
+      VCPKG_INSTALLED_DIR: "C:/vcpkg/installed"
+      VCPKG_PREFER_SYSTEM_LIBS: "OFF"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "C:/vcpkg"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-krasum'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_c6e8a/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_c6e8a.dir\\build.make CMakeFiles/cmTC_c6e8a.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-krasum'
+        Building C object CMakeFiles/cmTC_c6e8a.dir/src.c.obj
+        C:\\msys64\\ucrt64\\bin\\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD  -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -std=gnu99 -o CMakeFiles\\cmTC_c6e8a.dir\\src.c.obj -c C:\\Users\\mathe\\Projects\\ECS-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-krasum\\src.c
+        Linking C executable cmTC_c6e8a.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_c6e8a.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_c6e8a.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_c6e8a.dir/objects.a @CMakeFiles\\cmTC_c6e8a.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\gcc.exe -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -Wl,--whole-archive CMakeFiles\\cmTC_c6e8a.dir/objects.a -Wl,--no-whole-archive -o cmTC_c6e8a.exe -Wl,--out-implib,libcmTC_c6e8a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_c6e8a.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-krasum'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "build/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:274 (check_include_file)"
+    checks:
+      - "Looking for dinput.h"
+    directories:
+      source: "C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-n1euwb"
+      binary: "C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-n1euwb"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/mathe/Projects/ECS-2/build/_deps/raylib-src/cmake;C:/Users/mathe/Projects/ECS-2/build/_deps/raylib-src/src/external/glfw/CMake/modules"
+      VCPKG_INSTALLED_DIR: "C:/vcpkg/installed"
+      VCPKG_PREFER_SYSTEM_LIBS: "OFF"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "C:/vcpkg"
+    buildResult:
+      variable: "DINPUT_H_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-n1euwb'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_3893e/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_3893e.dir\\build.make CMakeFiles/cmTC_3893e.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-n1euwb'
+        Building C object CMakeFiles/cmTC_3893e.dir/CheckIncludeFile.c.obj
+        C:\\msys64\\ucrt64\\bin\\gcc.exe   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -std=gnu99 -o CMakeFiles\\cmTC_3893e.dir\\CheckIncludeFile.c.obj -c C:\\Users\\mathe\\Projects\\ECS-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n1euwb\\CheckIncludeFile.c
+        Linking C executable cmTC_3893e.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_3893e.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_3893e.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_3893e.dir/objects.a @CMakeFiles\\cmTC_3893e.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\gcc.exe -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -Wl,--whole-archive CMakeFiles\\cmTC_3893e.dir/objects.a -Wl,--no-whole-archive -o cmTC_3893e.exe -Wl,--out-implib,libcmTC_3893e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_3893e.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-n1euwb'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.3/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "build/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt:275 (check_include_file)"
+    checks:
+      - "Looking for xinput.h"
+    directories:
+      source: "C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-bixm2s"
+      binary: "C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-bixm2s"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith "
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/mathe/Projects/ECS-2/build/_deps/raylib-src/cmake;C:/Users/mathe/Projects/ECS-2/build/_deps/raylib-src/src/external/glfw/CMake/modules"
+      VCPKG_INSTALLED_DIR: "C:/vcpkg/installed"
+      VCPKG_PREFER_SYSTEM_LIBS: "OFF"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "C:/vcpkg"
+    buildResult:
+      variable: "XINPUT_H_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-bixm2s'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_2188e/fast
+        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_2188e.dir\\build.make CMakeFiles/cmTC_2188e.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-bixm2s'
+        Building C object CMakeFiles/cmTC_2188e.dir/CheckIncludeFile.c.obj
+        C:\\msys64\\ucrt64\\bin\\gcc.exe   -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -std=gnu99 -o CMakeFiles\\cmTC_2188e.dir\\CheckIncludeFile.c.obj -c C:\\Users\\mathe\\Projects\\ECS-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bixm2s\\CheckIncludeFile.c
+        Linking C executable cmTC_2188e.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_2188e.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_2188e.dir/objects.a
+        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_2188e.dir/objects.a @CMakeFiles\\cmTC_2188e.dir\\objects1.rsp
+        C:\\msys64\\ucrt64\\bin\\gcc.exe -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith   -Wl,--whole-archive CMakeFiles\\cmTC_2188e.dir/objects.a -Wl,--no-whole-archive -o cmTC_2188e.exe -Wl,--out-implib,libcmTC_2188e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_2188e.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/mathe/Projects/ECS-2/build/CMakeFiles/CMakeScratch/TryCompile-bixm2s'
+        
+      exitCode: 0
+...
