@@ -2,43 +2,29 @@
 
 #include <raylib.h>
 
+#include <ranges>
 #include <iostream>
-#include <algorithm>
 
 #include "../headers/ECS/Components.hpp"
-#include "../headers/ECS/Storage.hpp"
+#include "../headers/ECS/Systems/Misc/Utility.hpp"
 
 class Render
 {
 public:
     void RenderEntities()
     {
-        for (auto& [_, components] : Storage::entitiesComponents)
+        for (const auto& entity : std::views::keys(Storage::entitiesComponents))
         {
-            // NEED TO REFACTOR ALL THAT SHIT AND MAKE IT WORK
-            auto it_render = std::find_if(components.begin(), components.end(), [](const auto& component){
-                return component.type() == typeid(Components::Render); 
-            });
+            auto render = Utility::GetComponent<Components::Render>(entity);            
+            auto transform = Utility::GetComponent<Components::Transform>(entity);
 
-            if (it_render == components.end())
+            if (!render.has_value() || !transform.has_value())
             {
                 continue;
             }
 
-            auto it_transform = std::find_if(components.begin(), components.end(), [](const auto& component){
-                return component.type() == typeid(Components::Transform); 
-            });
-
-            if (it_transform == components.end())
-            {
-                continue;
-            }
-
-            auto render = std::any_cast<Components::Render>(*it_render);
-            auto transform = std::any_cast<Components::Transform>(*it_transform);
-
-            Rectangle rect {transform.position.x, transform.position.y, transform.size, transform.size};
-            DrawRectangleRec(rect, render.color);
-        } 
+            Rectangle rect {transform->get().position.x, transform->get().position.y, transform->get().size, transform->get().size};
+            DrawRectangleRec(rect, render->get().color);
+        }
     };
 };

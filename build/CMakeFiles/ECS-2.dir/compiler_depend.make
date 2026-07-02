@@ -180,6 +180,7 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: C:/Users/mathe/Projects/ECS-2/src/main.cp
   C:/Users/mathe/Projects/ECS-2/headers/ECS/Managers/EntityManager.hpp \
   C:/Users/mathe/Projects/ECS-2/headers/ECS/Managers/SystemsManager.hpp \
   C:/Users/mathe/Projects/ECS-2/headers/ECS/Storage.hpp \
+  C:/Users/mathe/Projects/ECS-2/headers/ECS/Systems/Misc/Utility.hpp \
   C:/Users/mathe/Projects/ECS-2/headers/ECS/Systems/Render.hpp \
   C:/msys64/ucrt64/include/_mingw.h \
   C:/msys64/ucrt64/include/_mingw_mac.h \
@@ -191,6 +192,7 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: C:/Users/mathe/Projects/ECS-2/src/main.cp
   C:/msys64/ucrt64/include/assert.h \
   C:/msys64/ucrt64/include/c++/16.1.0/algorithm \
   C:/msys64/ucrt64/include/c++/16.1.0/any \
+  C:/msys64/ucrt64/include/c++/16.1.0/array \
   C:/msys64/ucrt64/include/c++/16.1.0/backward/auto_ptr.h \
   C:/msys64/ucrt64/include/c++/16.1.0/backward/binders.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bit \
@@ -206,6 +208,7 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: C:/Users/mathe/Projects/ECS-2/src/main.cp
   C:/msys64/ucrt64/include/c++/16.1.0/bits/basic_ios.tcc \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/basic_string.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/basic_string.tcc \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/binders.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/char_traits.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/charconv.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/concept_check.h \
@@ -277,6 +280,7 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: C:/Users/mathe/Projects/ECS-2/src/main.cp
   C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_tempbuf.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_uninitialized.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_vector.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/bits/stream_iterator.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/streambuf.tcc \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/streambuf_iterator.h \
   C:/msys64/ucrt64/include/c++/16.1.0/bits/string_view.tcc \
@@ -315,6 +319,7 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: C:/Users/mathe/Projects/ECS-2/src/main.cp
   C:/msys64/ucrt64/include/c++/16.1.0/iosfwd \
   C:/msys64/ucrt64/include/c++/16.1.0/iostream \
   C:/msys64/ucrt64/include/c++/16.1.0/istream \
+  C:/msys64/ucrt64/include/c++/16.1.0/iterator \
   C:/msys64/ucrt64/include/c++/16.1.0/limits \
   C:/msys64/ucrt64/include/c++/16.1.0/memory \
   C:/msys64/ucrt64/include/c++/16.1.0/new \
@@ -325,6 +330,8 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: C:/Users/mathe/Projects/ECS-2/src/main.cp
   C:/msys64/ucrt64/include/c++/16.1.0/pstl/glue_algorithm_defs.h \
   C:/msys64/ucrt64/include/c++/16.1.0/pstl/glue_memory_defs.h \
   C:/msys64/ucrt64/include/c++/16.1.0/pstl/pstl_config.h \
+  C:/msys64/ucrt64/include/c++/16.1.0/ranges \
+  C:/msys64/ucrt64/include/c++/16.1.0/span \
   C:/msys64/ucrt64/include/c++/16.1.0/stdexcept \
   C:/msys64/ucrt64/include/c++/16.1.0/stdlib.h \
   C:/msys64/ucrt64/include/c++/16.1.0/streambuf \
@@ -761,6 +768,8 @@ C:/Users/mathe/Projects/ECS-2/headers/ECS/Components.hpp:
 
 C:/Users/mathe/Projects/ECS-2/headers/ECS/Managers/ComponentsManager.hpp:
 
+C:/Users/mathe/Projects/ECS-2/headers/ECS/Systems/Misc/Utility.hpp:
+
 C:/msys64/ucrt64/include/c++/16.1.0/unordered_map:
 
 C:/Users/mathe/Projects/ECS-2/headers/ECS/Systems/Render.hpp:
@@ -770,6 +779,8 @@ C:/msys64/ucrt64/include/assert.h:
 C:/msys64/ucrt64/include/c++/16.1.0/algorithm:
 
 C:/msys64/ucrt64/include/c++/16.1.0/any:
+
+C:/msys64/ucrt64/include/c++/16.1.0/array:
 
 C:/msys64/ucrt64/include/c++/16.1.0/bits/algorithmfwd.h:
 
@@ -783,7 +794,13 @@ C:/msys64/ucrt64/include/c++/16.1.0/bits/atomic_lockfree_defines.h:
 
 C:/msys64/ucrt64/include/c++/16.1.0/bits/atomic_wait.h:
 
+C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_raw_storage_iter.h:
+
+C:/msys64/ucrt64/include/c++/16.1.0/bits/binders.h:
+
 C:/msys64/ucrt64/include/c++/16.1.0/bits/hashtable.h:
+
+C:/msys64/ucrt64/include/c++/16.1.0/iterator:
 
 C:/msys64/ucrt64/include/c++/16.1.0/bits/hashtable_policy.h:
 
@@ -805,9 +822,9 @@ C:/msys64/ucrt64/include/c++/16.1.0/bits/shared_ptr_base.h:
 
 C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_heap.h:
 
-C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_raw_storage_iter.h:
-
 C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_tempbuf.h:
+
+C:/msys64/ucrt64/include/c++/16.1.0/bits/stream_iterator.h:
 
 C:/msys64/ucrt64/include/c++/16.1.0/bits/uniform_int_dist.h:
 
@@ -818,6 +835,10 @@ C:/msys64/ucrt64/include/c++/16.1.0/ext/aligned_buffer.h:
 C:/msys64/ucrt64/include/c++/16.1.0/ext/concurrence.h:
 
 C:/msys64/ucrt64/include/c++/16.1.0/pstl/execution_defs.h:
+
+C:/msys64/ucrt64/include/c++/16.1.0/ranges:
+
+C:/msys64/ucrt64/include/c++/16.1.0/span:
 
 C:/msys64/ucrt64/include/stdarg.h:
 

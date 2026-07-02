@@ -14,6 +14,10 @@ int main()
     InitAudioDevice();
 
     auto entity = ECS::CreateEntity();
+    auto entity2 = ECS::CreateEntity();
+
+    auto component = ECS::GetComponent<Components::Transform>(entity2.value());
+    component.value().get().position.x = 200;
 
     while (!WindowShouldClose())
     {

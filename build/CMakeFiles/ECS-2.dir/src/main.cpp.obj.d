@@ -206,4 +206,11 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/hashtable_policy.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/node_handle.h \
  C:/Users/mathe/Projects/ECS-2/headers/ECS/Managers/SystemsManager.hpp \
- C:/Users/mathe/Projects/ECS-2/headers/ECS/Systems/Render.hpp
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Systems/Render.hpp \
+ C:/msys64/ucrt64/include/c++/16.1.0/ranges \
+ C:/msys64/ucrt64/include/c++/16.1.0/iterator \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stream_iterator.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/span \
+ C:/msys64/ucrt64/include/c++/16.1.0/array \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/binders.h \
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Systems/Misc/Utility.hpp

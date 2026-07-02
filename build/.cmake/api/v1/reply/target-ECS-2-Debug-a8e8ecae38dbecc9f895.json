@@ -212,7 +212,9 @@
 				4,
 				5,
 				6,
-				7
+				7,
+				8,
+				9
 			]
 		}
 	],
@@ -232,32 +234,42 @@
 		},
 		{
 			"backtrace" : 2,
-			"path" : "headers/Components.hpp",
+			"path" : "headers/ECS/Components.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 2,
-			"path" : "headers/ECS.hpp",
+			"path" : "headers/ECS/ECS.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 2,
-			"path" : "headers/Managers/ComponentsManager.hpp",
+			"path" : "headers/ECS/Managers/ComponentsManager.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 2,
-			"path" : "headers/Managers/EntityManager.hpp",
+			"path" : "headers/ECS/Managers/EntityManager.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 2,
-			"path" : "headers/Managers/SystemsManager.hpp",
+			"path" : "headers/ECS/Managers/SystemsManager.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 2,
-			"path" : "headers/Systems/Render.hpp",
+			"path" : "headers/ECS/Storage.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "headers/ECS/Systems/Misc/Utility.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "headers/ECS/Systems/Render.hpp",
 			"sourceGroupIndex" : 1
 		}
 	],

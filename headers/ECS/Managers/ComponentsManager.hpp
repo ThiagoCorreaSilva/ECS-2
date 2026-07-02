@@ -9,6 +9,22 @@
 
 class ComponentsManager
 {
+
+private:
+    template <typename T>
+    std::optional<std::reference_wrapper<T>> TryAddComponent(unsigned short& entity)
+    {
+        Storage::entitiesComponents.at(entity).emplace_back(T{});
+        if (auto ptr = std::any_cast<T>(&Storage::entitiesComponents.at(entity).back()))
+        {
+            return std::ref(*ptr);
+        }
+        else
+        {
+            return std::nullopt;
+        }
+    };
+
 public:
     template <typename T>
     std::optional<std::reference_wrapper<T>> AddComponent(unsigned short& entity)
@@ -16,16 +32,8 @@ public:
         if (Storage::entitiesComponents.empty() || !Storage::entitiesComponents.contains(entity))
         {
             Storage::entitiesComponents.emplace(entity, std::vector<std::any>{});
-            Storage::entitiesComponents.at(entity).emplace_back(T{});
 
-            if (auto ptr = std::any_cast<T>(&Storage::entitiesComponents.at(entity).back()))
-            {
-                return std::ref(*ptr);
-            }
-            else
-            {
-                return std::nullopt;
-            }
+            return TryAddComponent<T>(entity); 
         }
 
         for (const auto& component : Storage::entitiesComponents.at(entity))
@@ -35,6 +43,8 @@ public:
                 std::cerr << "Entity " << entity << " already have component " << typeid(T).name() << '\n';
                 return std::nullopt;
             }
+
+            return TryAddComponent<T>(entity);
         }
         
         return std::nullopt;
