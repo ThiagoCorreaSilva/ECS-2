@@ -1,4 +1,4 @@
-#include "../headers/Managers/EntityManager.hpp"
+#include "../headers/ECS/Managers/EntityManager.hpp"
 #include <iostream>
 
 EntityManager::EntityManager()

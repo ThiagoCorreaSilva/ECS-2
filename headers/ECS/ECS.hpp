@@ -1,11 +1,15 @@
 #pragma once
 
-#include <optional>
+#include <any>
+#include <span>
+#include <vector>
 #include <memory>
+#include <optional>
+#include <unordered_map>
 
-#include "../headers/Managers/EntityManager.hpp"
-#include "../headers/Managers/ComponentsManager.hpp"
-#include "../headers/Managers/SystemsManager.hpp"
+#include "../headers/ECS/Managers/EntityManager.hpp"
+#include "../headers/ECS/Managers/ComponentsManager.hpp"
+#include "../headers/ECS/Managers/SystemsManager.hpp"
 
 class ECS
 {
@@ -13,6 +17,8 @@ private:
     static std::unique_ptr<EntityManager> entitiesManager;
     static std::unique_ptr<ComponentsManager> componentsManager;
     static std::unique_ptr<SystemsManager> systemsManager;
+
+    static std::unordered_map<Entity, std::vector<std::any>> m_entitiesComponents; 
 
 public:
     static std::optional<Entity> CreateEntity()

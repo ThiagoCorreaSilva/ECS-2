@@ -160,12 +160,17 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/istream.tcc \
  C:/msys64/ucrt64/include/c++/16.1.0/cassert \
  C:/msys64/ucrt64/include/assert.h \
- C:/Users/mathe/Projects/ECS-2/headers/ECS.hpp \
- C:/msys64/ucrt64/include/c++/16.1.0/optional \
- C:/msys64/ucrt64/include/c++/16.1.0/bits/enable_special_members.h \
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/ECS.hpp \
+ C:/msys64/ucrt64/include/c++/16.1.0/any \
+ C:/msys64/ucrt64/include/c++/16.1.0/span \
+ C:/msys64/ucrt64/include/c++/16.1.0/array \
+ C:/msys64/ucrt64/include/c++/16.1.0/vector \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_uninitialized.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_vector.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_bvector.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/vector.tcc \
  C:/msys64/ucrt64/include/c++/16.1.0/memory \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_tempbuf.h \
- C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_uninitialized.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_raw_storage_iter.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/align.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/unique_ptr.h \
@@ -184,13 +189,15 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/ranges_algobase.h \
  C:/msys64/ucrt64/include/c++/16.1.0/pstl/glue_memory_defs.h \
  C:/msys64/ucrt64/include/c++/16.1.0/pstl/execution_defs.h \
- C:/Users/mathe/Projects/ECS-2/headers/Managers/EntityManager.hpp \
- C:/msys64/ucrt64/include/c++/16.1.0/vector \
- C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_vector.h \
- C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_bvector.h \
- C:/msys64/ucrt64/include/c++/16.1.0/bits/vector.tcc \
- C:/Users/mathe/Projects/ECS-2/headers/Managers/ComponentsManager.hpp \
- C:/msys64/ucrt64/include/c++/16.1.0/any \
+ C:/msys64/ucrt64/include/c++/16.1.0/optional \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/enable_special_members.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/unordered_map \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/unordered_map.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/hashtable.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/hashtable_policy.h \
+ C:/msys64/ucrt64/include/c++/16.1.0/bits/node_handle.h \
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Managers/EntityManager.hpp \
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Managers/ComponentsManager.hpp \
  C:/msys64/ucrt64/include/c++/16.1.0/algorithm \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/stl_algo.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/algorithmfwd.h \
@@ -198,10 +205,5 @@ CMakeFiles/ECS-2.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/uniform_int_dist.h \
  C:/msys64/ucrt64/include/c++/16.1.0/bits/ranges_algo.h \
  C:/msys64/ucrt64/include/c++/16.1.0/pstl/glue_algorithm_defs.h \
- C:/msys64/ucrt64/include/c++/16.1.0/unordered_map \
- C:/msys64/ucrt64/include/c++/16.1.0/bits/unordered_map.h \
- C:/msys64/ucrt64/include/c++/16.1.0/bits/hashtable.h \
- C:/msys64/ucrt64/include/c++/16.1.0/bits/hashtable_policy.h \
- C:/msys64/ucrt64/include/c++/16.1.0/bits/node_handle.h \
- C:/Users/mathe/Projects/ECS-2/headers/Components.hpp \
- C:/Users/mathe/Projects/ECS-2/headers/Managers/SystemsManager.hpp
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Components.hpp \
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Managers/SystemsManager.hpp

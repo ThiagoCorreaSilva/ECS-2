@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <unordered_map>
 
-#include "../headers/Components.hpp"
+#include "../headers/ECS/Components.hpp"
 
 class ComponentsManager
 {
