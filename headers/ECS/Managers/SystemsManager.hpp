@@ -1,10 +1,9 @@
 #pragma once
 
-#include <any>
-#include <span>
-#include <vector>
+#include <memory>
 #include <iostream>
-#include <unordered_map>
+
+#include "../headers/ECS/Systems/Render.hpp"
 
 enum class System
 {
@@ -14,12 +13,21 @@ enum class System
 
 class SystemsManager
 {
+private:
+    std::unique_ptr<Render> render;
+
 public:
+    SystemsManager()
+    {
+        render = std::make_unique<Render>();
+    }
+
     void UpdateSystem(const System& system)
     {
        switch (system)
         {
             case System::RENDER:
+                render->RenderEntities();
             break;
 
             case System::PHYSICS:

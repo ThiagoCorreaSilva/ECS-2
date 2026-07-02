@@ -11,7 +11,7 @@ namespace Components
 
     struct Transform
     {
-        Vector2 position = Vector2(0, 0);
+        Vector2 position = Vector2(500, 500);
         float size = 10.f;
         float rotation = 0.f;    
     };

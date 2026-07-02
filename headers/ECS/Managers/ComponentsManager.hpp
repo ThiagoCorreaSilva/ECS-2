@@ -1,29 +1,24 @@
 #pragma 
 
-#include <any>
-#include <vector>
 #include <iostream>
 #include <optional>
 #include <algorithm>
-#include <unordered_map>
 
 #include "../headers/ECS/Components.hpp"
+#include "../headers/ECS/Storage.hpp"
 
 class ComponentsManager
 {
-private:
-    std::unordered_map<unsigned short, std::vector<std::any>> m_entitiesComponents;
-
 public:
     template <typename T>
     std::optional<std::reference_wrapper<T>> AddComponent(unsigned short& entity)
     {
-        if (m_entitiesComponents.empty() || !m_entitiesComponents.contains(entity))
+        if (Storage::entitiesComponents.empty() || !Storage::entitiesComponents.contains(entity))
         {
-            m_entitiesComponents.emplace(entity, std::vector<std::any>{});
-            m_entitiesComponents.at(entity).emplace_back(T{});
+            Storage::entitiesComponents.emplace(entity, std::vector<std::any>{});
+            Storage::entitiesComponents.at(entity).emplace_back(T{});
 
-            if (auto ptr = std::any_cast<T>(&m_entitiesComponents.at(entity).back()))
+            if (auto ptr = std::any_cast<T>(&Storage::entitiesComponents.at(entity).back()))
             {
                 return std::ref(*ptr);
             }
@@ -33,7 +28,7 @@ public:
             }
         }
 
-        for (const auto& component : m_entitiesComponents.at(entity))
+        for (const auto& component : Storage::entitiesComponents.at(entity))
         {
             if (component.type() == typeid(T))
             {
@@ -48,13 +43,13 @@ public:
     template <typename T>
     std::optional<std::reference_wrapper<T>> GetComponent(unsigned short& entity)
     {
-        if (!m_entitiesComponents.contains(entity))
+        if (!Storage::entitiesComponents.contains(entity))
         {
             std::cerr << "Can't find entity " << entity << '\n';
             return std::nullopt;
         }
 
-        for (auto& component : m_entitiesComponents.at(entity))
+        for (auto& component : Storage::entitiesComponents.at(entity))
         {
             if (component.type() == typeid(T))
             {
@@ -76,13 +71,13 @@ public:
     template <typename T>
     bool RemoveComponent(unsigned short& entity)
     {
-        if (m_entitiesComponents.empty() || !m_entitiesComponents.contains(entity))
+        if (Storage::entitiesComponents.empty() || !Storage::entitiesComponents.contains(entity))
         {
             std::cerr << "Empty entities_components container or can't find entity " << entity << '\n';
             return false;
         }
 
-        auto& container = m_entitiesComponents.at(entity);
+        auto& container = Storage::entitiesComponents.at(entity);
         auto it = std::find_if(container.begin(), container.end(), [](const auto& component){
             return component.type() == typeid(T);
         });

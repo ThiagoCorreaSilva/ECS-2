@@ -7,5 +7,7 @@
 class Storage
 {
 public:
-    static std::unordered_map<unsigned short&, std::vector<std::any>> entitiesComponents;
+    static std::unordered_map<unsigned short, std::vector<std::any>> entitiesComponents;
 };
+
+std::unordered_map<unsigned short, std::vector<std::any>> Storage::entitiesComponents;

@@ -3,7 +3,7 @@
 
 CMakeFiles/ECS-2.dir/src/EntityManager.cpp.obj
  C:/Users/mathe/Projects/ECS-2/src/EntityManager.cpp
- C:/Users/mathe/Projects/ECS-2/headers/Managers/EntityManager.hpp
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Managers/EntityManager.hpp
  C:/msys64/ucrt64/include/_mingw.h
  C:/msys64/ucrt64/include/_mingw_mac.h
  C:/msys64/ucrt64/include/_mingw_off_t.h
@@ -176,11 +176,13 @@ CMakeFiles/ECS-2.dir/src/EntityManager.cpp.obj
 
 CMakeFiles/ECS-2.dir/src/main.cpp.obj
  C:/Users/mathe/Projects/ECS-2/src/main.cpp
- C:/Users/mathe/Projects/ECS-2/headers/Components.hpp
- C:/Users/mathe/Projects/ECS-2/headers/ECS.hpp
- C:/Users/mathe/Projects/ECS-2/headers/Managers/ComponentsManager.hpp
- C:/Users/mathe/Projects/ECS-2/headers/Managers/EntityManager.hpp
- C:/Users/mathe/Projects/ECS-2/headers/Managers/SystemsManager.hpp
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Components.hpp
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/ECS.hpp
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Managers/ComponentsManager.hpp
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Managers/EntityManager.hpp
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Managers/SystemsManager.hpp
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Storage.hpp
+ C:/Users/mathe/Projects/ECS-2/headers/ECS/Systems/Render.hpp
  C:/msys64/ucrt64/include/_mingw.h
  C:/msys64/ucrt64/include/_mingw_mac.h
  C:/msys64/ucrt64/include/_mingw_off_t.h

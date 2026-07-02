@@ -13,10 +13,14 @@ int main()
     InitWindow(WIDTH, HEIGHT, TITLE);
     InitAudioDevice();
 
+    auto entity = ECS::CreateEntity();
+
     while (!WindowShouldClose())
     {
         ClearBackground(WHITE);
         BeginDrawing();
+
+        ECS::UpdateSystem(System::RENDER);
 
         DrawFPS(10, 10);
 
