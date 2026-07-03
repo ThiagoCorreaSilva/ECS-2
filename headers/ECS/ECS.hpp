@@ -14,6 +14,20 @@ private:
     static std::unique_ptr<ComponentsManager> componentsManager;
     static std::unique_ptr<SystemsManager> systemsManager;
 
+private:
+    static bool AddDefaultComponents(Entity& entity)
+    {
+        auto transform = componentsManager->AddComponent<Components::Transform>(entity);
+        auto render = componentsManager->AddComponent<Components::Render>(entity);
+
+        if (!transform.has_value() || !render.has_value())
+        {
+            return false;
+        }
+
+        return true;
+    }
+
 public:
     static std::optional<Entity> CreateEntity()
     {
@@ -23,10 +37,7 @@ public:
             return std::nullopt;
         }
 
-        auto transform = componentsManager->AddComponent<Components::Transform>(entity.value());
-        auto render = componentsManager->AddComponent<Components::Render>(entity.value());
-
-        if (!transform.has_value() || !render.has_value())
+        if (!AddDefaultComponents(entity.value()))
         {
             return std::nullopt;
         }

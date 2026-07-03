@@ -16,6 +16,9 @@ int main()
     auto entity = ECS::CreateEntity();
     auto entity2 = ECS::CreateEntity();
 
+    auto render = ECS::GetComponent<Components::Render>(entity2.value());
+    render.value().get().color = RED;
+
     auto component = ECS::GetComponent<Components::Transform>(entity2.value());
     component.value().get().position.x = 200;
 
