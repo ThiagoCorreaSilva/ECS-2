@@ -10,9 +10,9 @@
 class ECS
 {
 private:
-    static std::unique_ptr<EntityManager> entitiesManager;
-    static std::unique_ptr<ComponentsManager> componentsManager;
-    static std::unique_ptr<SystemsManager> systemsManager;
+    inline static std::unique_ptr<EntityManager> entitiesManager = std::make_unique<EntityManager>();
+    inline static std::unique_ptr<ComponentsManager> componentsManager = std::make_unique<ComponentsManager>();
+    inline static std::unique_ptr<SystemsManager> systemsManager = std::make_unique<SystemsManager>();
 
 private:
     static bool AddDefaultComponents(Entity& entity)
@@ -86,7 +86,3 @@ public:
         systemsManager->UpdateSystem(system);
     }
 };
-
-std::unique_ptr<EntityManager> ECS::entitiesManager = std::make_unique<EntityManager>();
-std::unique_ptr<ComponentsManager> ECS::componentsManager = std::make_unique<ComponentsManager>();
-std::unique_ptr<SystemsManager> ECS::systemsManager = std::make_unique<SystemsManager>();
