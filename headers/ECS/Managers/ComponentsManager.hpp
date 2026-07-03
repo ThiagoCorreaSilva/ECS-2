@@ -1,4 +1,4 @@
-#pragma 
+#pragma once
 
 #include <iostream>
 #include <optional>
@@ -100,6 +100,30 @@ public:
 
         container.erase(it);
         std::cout << "Component " << typeid(T).name() << " removed from entity " << entity << '\n';
+
+        return true;
+    }
+
+    template <typename T>
+    bool HaveComponent(unsigned short& entity)
+    {
+        auto& container = Storage::entitiesComponents;
+        if (!container.contains(entity) || container.empty())
+        {
+            std::cerr << "Can't check if entity " << entity << " have component " << typeid(T).name()
+                      << " because container entities_components is empty or can't find the entity\n";
+
+            return false;
+        }
+
+        auto it = std::find_if(container.at(entity).begin(), container.at(entity).end(), [](const auto& component){
+            return component.type() == typeid(T);
+        });
+
+        if (it == container.at(entity).end())
+        {
+            return false;
+        }
 
         return true;
     }

@@ -81,6 +81,12 @@ public:
         return componentsManager->RemoveComponent<T>(entity);
     }
 
+    template <typename T>
+    static bool HaveComponent(Entity& entity)
+    {
+        return componentsManager->HaveComponent<T>(entity);   
+    }
+
     static void UpdateSystem(const System& system)
     {
         systemsManager->UpdateSystem(system);
