@@ -19,6 +19,11 @@ int main()
     auto render = ECS::GetComponent<Components::Render>(entity.value());
     render.value().get().color = GREEN;
 
+    auto ground_Component = ECS::GetComponent<Components::Transform>(entity.value());
+    ground_Component.value().get().size = 500;
+    ground_Component.value().get().position.x = 150;
+    ground_Component.value().get().position.y = 700;
+
     auto render2 = ECS::GetComponent<Components::Render>(entity2.value());
     render2.value().get().color = RED;
 

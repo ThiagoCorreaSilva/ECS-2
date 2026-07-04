@@ -1,6 +1,7 @@
 #pragma once
 
 #include <raylib.h>
+#include <iostream>
 
 namespace Components
 {
@@ -31,19 +32,22 @@ namespace Components
 
         float mass = 9.f;
 
-        void Force(Vector2& initialPos, float& mass, Sense sense, Directions direction, float aceleration) {
-            auto calc = mass * (int)sense * aceleration;
+        void BodySpeed(Vector2& initialPos, Sense sense, Directions direction, float aceleration) {
+            const auto calc = mass * (int)sense * aceleration * aceleration;
+           /* const int divisor = 200000;
+            const Vector2 controllVec = { initialPos.x / divisor , initialPos.y / divisor };*/
 
             switch (direction) {
             case HORIZONTAL:
-                initialPos.x += 2 / initialPos.x + calc;
+                initialPos.x += calc;
+                std::cout << "POS X : " << initialPos.x << '\n';
                 break;
             case VERTICAL:
-                initialPos.y -= 2 / initialPos.y + calc;
+                initialPos.y -= calc;
                 break;
             case DIAGONAL:
-                initialPos.x += 2 / initialPos.x + calc;
-                initialPos.y -= 2 / initialPos.y + calc;
+                initialPos.x += calc;
+                initialPos.y -= calc;
                 break;
             }
         }
