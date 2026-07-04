@@ -6,7 +6,7 @@
 #include <iostream>
 
 #include "../headers/ECS/Components.hpp"
-#include "../headers/ECS/Systems/Misc/Utility.hpp"
+#include "../headers/Misc/Utility.hpp"
 
 class Render
 {
@@ -15,8 +15,8 @@ public:
     {
         for (const auto& entity : std::views::keys(Storage::entitiesComponents))
         {
-            auto render = Utility::GetComponent<Components::Render>(entity);            
-            auto transform = Utility::GetComponent<Components::Transform>(entity);
+            auto render = Utility::FindComponent<Components::Render>(entity);            
+            auto transform = Utility::FindComponent<Components::Transform>(entity);
 
             if (!render.has_value() || !transform.has_value())
             {

@@ -9,10 +9,9 @@ class Utility
 {
 public:
     template <typename T>
-    static std::optional<std::reference_wrapper<T>> GetComponent(const unsigned short& entity)
+    static std::optional<std::reference_wrapper<T>> FindComponent(const unsigned short& entity)
     {
-        auto components = Storage::entitiesComponents.at(entity);
-
+        auto& components = Storage::entitiesComponents.at(entity);
         auto it = std::find_if(components.begin(), components.end(), [](const auto& component){
             return component.type() == typeid(T);
         });

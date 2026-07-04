@@ -5,7 +5,7 @@
 #include <algorithm>
 
 #include "../headers/ECS/Components.hpp"
-#include "../headers/ECS/Storage.hpp"
+#include "../headers/Misc/Utility.hpp"
 
 class ComponentsManager
 {
@@ -36,46 +36,28 @@ public:
             return TryAddComponent<T>(entity); 
         }
 
-        for (const auto& component : Storage::entitiesComponents.at(entity))
+        auto result = Utility::FindComponent<T>(entity);
+        if (!result.has_value())
         {
-            if (component.type() == typeid(T))
-            {
-                std::cerr << "Entity " << entity << " already have component " << typeid(T).name() << '\n';
-                return std::nullopt;
-            }
-
+            std::cout << "Adding component " << typeid(T).name() << " to entity " << entity << '\n';
             return TryAddComponent<T>(entity);
         }
-        
+
+        std::cerr << "Entity " << entity << " already have component " << typeid(T).name() << '\n';
         return std::nullopt;
     }
 
     template <typename T>
     std::optional<std::reference_wrapper<T>> GetComponent(unsigned short& entity)
     {
-        if (!Storage::entitiesComponents.contains(entity))
+        auto container = Storage::entitiesComponents;
+        if (!container.contains(entity) || container.empty())
         {
             std::cerr << "Can't find entity " << entity << '\n';
             return std::nullopt;
         }
 
-        for (auto& component : Storage::entitiesComponents.at(entity))
-        {
-            if (component.type() == typeid(T))
-            {
-                if (auto ptr = std::any_cast<T>(&component))
-                {
-                    return std::ref(*ptr);
-                }
-                else
-                {
-                    std::cerr << "Can't find component " << typeid(T).name() << " of entity " << entity << '\n';
-                    return std::nullopt;
-                }
-            }
-        }
-
-        return std::nullopt;
+        return Utility::FindComponent<T>(entity);
     }
 
     template <typename T>
