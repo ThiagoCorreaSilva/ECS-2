@@ -20,11 +20,14 @@ public:
 
             if (!render.has_value() || !transform.has_value())
             {
+                std::cout << "Something without value\n";
                 continue;
             }
 
             Rectangle rect {transform->get().position.x, transform->get().position.y, transform->get().size, transform->get().size};
             DrawRectangleRec(rect, render->get().color);
+
+            std::cout << "This shit is to be rendering\n";
         }
     };
 };
