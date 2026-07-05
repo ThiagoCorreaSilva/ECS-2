@@ -82,9 +82,9 @@ public:
     }
 
     template <typename T>
-    static bool HaveComponent(Entity& entity)
+    static bool HasComponent(Entity& entity)
     {
-        return componentsManager->HaveComponent<T>(entity);   
+        return componentsManager->HasComponent<T>(entity);   
     }
 
     static void UpdateSystem(const System& system)

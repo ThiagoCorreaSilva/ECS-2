@@ -87,7 +87,7 @@ public:
     }
 
     template <typename T>
-    bool HaveComponent(unsigned short& entity)
+    bool HasComponent(unsigned short& entity)
     {
         auto& container = Storage::entitiesComponents;
         if (!container.contains(entity) || container.empty())
