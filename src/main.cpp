@@ -1,4 +1,7 @@
+#define RAYGUI_IMPLEMENTATION
+#include <raygui.h>
 #include <raylib.h>
+
 #include <iostream>
 #include <cassert>
 
@@ -30,7 +33,6 @@ int main()
         ECS::UpdateSystem(System::RENDER);
 
         DrawFPS(10, 10);
-
         EndDrawing();
     }
 

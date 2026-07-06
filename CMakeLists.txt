@@ -20,10 +20,18 @@ FetchContent_Declare(
     DOWNLOAD_EXTRACT_TIMESTAMP OFF
     URL https://github.com/raysan5/raylib/archive/refs/tags/${RAYLIB_VERSION}.tar.gz
 )
-
 FetchContent_MakeAvailable(raylib)
+
+FetchContent_Declare(
+  raygui
+  GIT_REPOSITORY https://github.com/raysan5/raygui.git
+  GIT_TAG        master
+)
+FetchContent_MakeAvailable(raygui)
 
 include_directories(${CMAKE_SOURCE_DIR}/headers)
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
+target_include_directories(${PROJECT_NAME} PRIVATE ${raygui_SOURCE_DIR}/src)
