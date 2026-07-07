@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "../headers/ECS/Systems/Render.hpp"
+#include "../build/Physcs.hpp"
 
 enum class System
 {
@@ -15,11 +16,13 @@ class SystemsManager
 {
 private:
     std::unique_ptr<Render> render;
+    std::unique_ptr<Physcs> physis;
 
 public:
     SystemsManager()
     {
         render = std::make_unique<Render>();
+        physis = std::make_unique<Physcs>();
     }
 
     void UpdateSystem(const System& system)
@@ -31,7 +34,7 @@ public:
             break;
 
             case System::PHYSICS:
-                std::cout << "Todo\n";
+                physis->Gravity();
             break;
         }
     }
