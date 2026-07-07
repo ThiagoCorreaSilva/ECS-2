@@ -1,5 +1,3 @@
-#define RAYGUI_IMPLEMENTATION
-#include <raygui.h>
 #include <raylib.h>
 
 #include <iostream>
@@ -7,6 +5,7 @@
 
 #include "../headers/ECS/ECS.hpp"
 #include "../headers/ECS/Collision.hpp"
+#include "../headers/GameUI.hpp"
 
 constexpr int WIDTH = 1280;
 constexpr int HEIGHT = 720;
@@ -16,6 +15,7 @@ constexpr float FIXED_PHYSICS = 1.f / 60.f;
 float accumulator = 0.f;
 
 Rectangle ground {0, 700, 400, 400};
+GameUI ui;
 
 int main()
 {
@@ -56,16 +56,13 @@ int main()
             ECS::UpdateSystem(System::PHYSICS);
         }
         
-        ClearBackground(WHITE);
-        BeginDrawing();
-        
         auto compTrans = Utility::FindComponent<Components::Transform>(entity.value());
         auto compBody = Utility::FindComponent<Components::Body>(entity.value());
-
+        
         if (!compTrans) { 
             return 1; 
         }
-
+        
         Rectangle actual = { 
             compTrans.value().get().position.x,
             compTrans.value().get().position.y,
@@ -79,11 +76,14 @@ int main()
         else if (IsKeyDown(KEY_A)) {
             HorizontalMove(compBody, compTrans, Components::Body::Sense::RETROGRADE);
         }
-
+        
         body.value().get().canFall = !IsEnter(actual, ground);
         
-
+        ClearBackground(WHITE);
+        BeginDrawing();
+        
         ECS::UpdateSystem(System::RENDER);
+        ui.abilitiesUI();
 
         DrawFPS(10, 10);
         EndDrawing();
