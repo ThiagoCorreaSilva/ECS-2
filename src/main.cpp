@@ -7,7 +7,6 @@
 
 #include "../headers/ECS/ECS.hpp"
 #include "../headers/ECS/Collision.hpp"
-#include "main.h"
 
 constexpr int WIDTH = 1280;
 constexpr int HEIGHT = 720;
