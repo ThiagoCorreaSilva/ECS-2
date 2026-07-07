@@ -10,7 +10,7 @@
 
 class Physcs {
 private:
-    const float force = 0.2f;
+    const float force = 50.f;
     float timer = 0.f;
 public:
     void Gravity() {

@@ -12,6 +12,9 @@ constexpr int WIDTH = 1280;
 constexpr int HEIGHT = 720;
 constexpr const char* TITLE = "ECS-2";
 
+constexpr float FIXED_PHYSICS = 1.f / 60.f;
+float accumulator = 0.f;
+
 Rectangle ground {0, 700, 400, 400};
 
 int main()
@@ -41,11 +44,18 @@ int main()
     auto body2 = ECS::AddComponent<Components::Body>(entity3.value());
 
     float timer = 1.0f;
-
+    
     void HorizontalMove(std::optional<std::reference_wrapper<Components::Body>>&compBody, std::optional<std::reference_wrapper<Components::Transform>>&compTrans, Components::Body::Sense sense);
-
+    
     while (!WindowShouldClose())
     {
+        accumulator += GetFrameTime();
+        if (accumulator >= FIXED_PHYSICS)
+        {
+            accumulator = 0.f;
+            ECS::UpdateSystem(System::PHYSICS);
+        }
+        
         ClearBackground(WHITE);
         BeginDrawing();
         
@@ -72,7 +82,7 @@ int main()
 
         body.value().get().canFall = !IsEnter(actual, ground);
         
-        ECS::UpdateSystem(System::PHYSICS);
+
         ECS::UpdateSystem(System::RENDER);
 
         DrawFPS(10, 10);

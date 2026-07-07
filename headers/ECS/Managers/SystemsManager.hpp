@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "../headers/ECS/Systems/Render.hpp"
-#include "../headers/ECS/Systems/Physcs.hpp"
+#include "../headers/ECS/Systems/Physics.hpp"
 
 enum class System
 {
