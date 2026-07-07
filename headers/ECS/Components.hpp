@@ -40,7 +40,6 @@ namespace Components
             switch (direction) {
             case HORIZONTAL:
                 initialPos.x += calc;
-                std::cout << "POS X : " << initialPos.x << '\n';
                 break;
             case VERTICAL:
                 initialPos.y -= calc;
