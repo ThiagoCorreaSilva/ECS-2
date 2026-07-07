@@ -21,7 +21,7 @@ public:
             return std::nullopt;
         }
 
-        if (auto render = std::any_cast<T>(&*it))
+        if (auto* render = std::any_cast<T>(&*it))
         {
             return std::ref(*render);
         }

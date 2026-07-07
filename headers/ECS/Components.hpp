@@ -1,7 +1,6 @@
 #pragma once
 
 #include <raylib.h>
-#include <iostream>
 
 namespace Components
 {
@@ -17,7 +16,7 @@ namespace Components
         float rotation = 0.f;    
     };
 
-    struct Body 
+    struct Body
     {
         enum Directions {
             HORIZONTAL,
@@ -27,26 +26,28 @@ namespace Components
 
         enum Sense {
             PROGRESSIVE = 1,
-            REATARDED = -1
+            RETROGRADE = -1
         };
 
         float mass = 9.f;
+        float internalWatch = 0.f;
 
-        void BodySpeed(Vector2& initialPos, Sense sense, Directions direction, float aceleration) {
-            const auto calc = mass * (int)sense * aceleration * aceleration;
-           /* const int divisor = 200000;
-            const Vector2 controllVec = { initialPos.x / divisor , initialPos.y / divisor };*/
+        bool canFall = true;
+
+        void BodySpeed(Vector2& initialPos, Sense sense, Directions direction, float force) {
+            const auto calc = (force / mass) * (int)sense;
+            const auto calc_timer = calc * internalWatch * internalWatch / 2;
 
             switch (direction) {
             case HORIZONTAL:
-                initialPos.x += calc;
+                initialPos.x += calc_timer;
                 break;
             case VERTICAL:
-                initialPos.y -= calc;
+                initialPos.y -= calc_timer;
                 break;
             case DIAGONAL:
-                initialPos.x += calc;
-                initialPos.y -= calc;
+                initialPos.x += calc_timer;
+                initialPos.y -= calc_timer;
                 break;
             }
         }
