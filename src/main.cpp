@@ -83,7 +83,7 @@ int main()
         BeginDrawing();
         
         ECS::UpdateSystem(System::RENDER);
-        ui.abilitiesUI();
+        ui.Update();
 
         DrawFPS(10, 10);
         EndDrawing();

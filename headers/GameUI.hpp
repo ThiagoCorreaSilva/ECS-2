@@ -4,16 +4,21 @@
 #include <raylib.h>
 
 #include <array>
+#include <iostream>
 
 constexpr int squares = 3;
-constexpr int size = 100;
 
 class GameUI
 {
 private:
     std::array<Color, squares> colors;
+    float size = 100;
+    int selectedColor = -1;
 
 public:
     GameUI();
-    void abilitiesUI();
+
+    void Update();
+    void Input();
+    void AbilitiesUI();
 };
