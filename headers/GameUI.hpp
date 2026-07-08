@@ -8,6 +8,8 @@
 #include <iostream>
 
 constexpr int SQUARES_COUNT = 3;
+constexpr int DEFAULT_COLOR_1 = -1;
+constexpr int DEFAULT_COLOR_2 = -2;
 
 class GameUI
 {

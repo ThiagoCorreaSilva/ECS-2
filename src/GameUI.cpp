@@ -33,13 +33,13 @@ void GameUI::ChangeSelectedColor(const int& number)
 
     if (change)
     {
-        selectedColor = (selectedColor == -1) && (selectedColor != selectedColor2) ? number : -1; 
+        selectedColor = (selectedColor == DEFAULT_COLOR_1) && (selectedColor != selectedColor2) ? number : DEFAULT_COLOR_1; 
         change = false;
 
         return;
     }
 
-    selectedColor2 = (selectedColor2 == -2) && (selectedColor2 != selectedColor) ? number : -2; 
+    selectedColor2 = (selectedColor2 == DEFAULT_COLOR_2) && (selectedColor2 != selectedColor) ? number : DEFAULT_COLOR_2; 
     change = true;
 };
 
@@ -99,8 +99,8 @@ void GameUI::Input()
 
     if (IsKeyReleased(KEY_R))
     {
-        selectedColor = -1;
-        selectedColor2 = -2;
+        selectedColor = DEFAULT_COLOR_1;
+        selectedColor2 = DEFAULT_COLOR_2;
     }
 }
 
