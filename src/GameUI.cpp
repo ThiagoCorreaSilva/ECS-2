@@ -31,6 +31,16 @@ void GameUI::ChangeSelectedColor(const int& number)
 {
     static bool change = true;
 
+    if (selectedColor != DEFAULT_COLOR_1 && selectedColor2 != DEFAULT_COLOR_2)
+    {
+        selectedColor = DEFAULT_COLOR_1;
+        selectedColor2 = DEFAULT_COLOR_2;
+
+        change = true;
+
+        return;
+    }
+
     if (change)
     {
         selectedColor = (selectedColor == DEFAULT_COLOR_1) && (selectedColor != selectedColor2) ? number : DEFAULT_COLOR_1; 
