@@ -143,3 +143,8 @@ bool GameUI::CanUsePower()
 
     return selectedColor != DEFAULT_COLOR_1 && selectedColor2 != DEFAULT_COLOR_2;
 }
+
+std::pair<int, int> GameUI::SelectedColors()
+{
+    return {selectedColor, selectedColor2};
+}

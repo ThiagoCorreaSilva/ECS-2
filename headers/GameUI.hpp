@@ -35,4 +35,5 @@ public:
     static void Setup();
     static void Update();
     static bool CanUsePower();
+    static std::pair<int, int> SelectedColors();
 };
