@@ -15,7 +15,9 @@ private:
     std::array<std::pair<Rectangle, Color>, SQUARES_COUNT> squares; 
     
     float size = 100;
+    
     int selectedColor = -1;
+    int selectedColor2 = -2;
 
 private:
     void ChangeSelectedColor(const int& number);

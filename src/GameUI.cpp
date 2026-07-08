@@ -29,7 +29,18 @@ GameUI::GameUI()
 
 void GameUI::ChangeSelectedColor(const int& number)
 {
-    selectedColor = selectedColor == number ? -1 : number;
+    static bool change = true;
+
+    if (change)
+    {
+        selectedColor = (selectedColor == -1) && (selectedColor != selectedColor2) ? number : -1; 
+        change = false;
+
+        return;
+    }
+
+    selectedColor2 = (selectedColor2 == -2) && (selectedColor2 != selectedColor) ? number : -2; 
+    change = true;
 };
 
 void GameUI::Update()
@@ -52,7 +63,7 @@ void GameUI::AbilitiesUI()
         float customSize = size;
         float offset_x = x - i * (customSize + spacing);
 
-        if (i == selectedColor)
+        if (i == selectedColor || i == selectedColor2)
         {
             customSize *= 1.3f;
         }
@@ -84,6 +95,12 @@ void GameUI::Input()
     if (IsKeyReleased(KEY_THREE))
     {
         ChangeSelectedColor(0);
+    }
+
+    if (IsKeyReleased(KEY_R))
+    {
+        selectedColor = -1;
+        selectedColor2 = -2;
     }
 }
 
