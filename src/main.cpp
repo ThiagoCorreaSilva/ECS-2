@@ -15,7 +15,6 @@ constexpr float FIXED_PHYSICS = 1.f / 60.f;
 float accumulator = 0.f;
 
 Rectangle ground {0, 700, 400, 400};
-GameUI ui;
 
 int main()
 {
@@ -46,7 +45,8 @@ int main()
     float timer = 1.0f;
     
     void HorizontalMove(std::optional<std::reference_wrapper<Components::Body>>&compBody, std::optional<std::reference_wrapper<Components::Transform>>&compTrans, Components::Body::Sense sense);
-    
+
+    GameUI::Setup();
     while (!WindowShouldClose())
     {
         accumulator += GetFrameTime();
@@ -83,7 +83,7 @@ int main()
         BeginDrawing();
         
         ECS::UpdateSystem(System::RENDER);
-        ui.Update();
+        GameUI::Update();
 
         DrawFPS(10, 10);
         EndDrawing();

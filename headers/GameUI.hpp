@@ -14,21 +14,24 @@ constexpr int DEFAULT_COLOR_2 = -2;
 class GameUI
 {
 private:
-    std::array<std::pair<Rectangle, Color>, SQUARES_COUNT> squares; 
+    inline static std::array<std::pair<Rectangle, Color>, SQUARES_COUNT> squares; 
     
-    float size = 100;
+    inline static float size = 100;
     
-    int selectedColor = -1;
-    int selectedColor2 = -2;
+    inline static int selectedColor = -1;
+    inline static int selectedColor2 = -2;
+
+    inline static bool setuped = false;
 
 private:
-    void ChangeSelectedColor(const int& number);
+    GameUI() = default;
+    static void ChangeSelectedColor(const int& number);
 
 public:
-    GameUI();
-
-    void Update();
-    void AbilitiesUI();
-    void Input();
-    void SelectWithMouse();
+    static void Setup();
+    static void Update();
+    static void AbilitiesUI();
+    static void Input();
+    static void SelectWithMouse();
+    static bool CanUsePower();
 };

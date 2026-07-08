@@ -1,7 +1,7 @@
 #define RAYGUI_IMPLEMENTATION
 #include "../headers/GameUI.hpp"
 
-GameUI::GameUI()
+void GameUI::Setup()
 {
     for (int i = 0; i < SQUARES_COUNT; i++)
     {
@@ -25,6 +25,8 @@ GameUI::GameUI()
         std::pair<Rectangle, Color> pair = {rect, color};
         squares.at(i) = pair;
     }
+
+    setuped = true;
 }
 
 void GameUI::ChangeSelectedColor(const int& number)
@@ -55,6 +57,12 @@ void GameUI::ChangeSelectedColor(const int& number)
 
 void GameUI::Update()
 {
+    if (!setuped)
+    {
+        std::cerr << "GameUI need to be setuped firts\n";
+        return;
+    }
+
     AbilitiesUI();
     Input();
     SelectWithMouse();
@@ -123,4 +131,9 @@ void GameUI::SelectWithMouse()
             ChangeSelectedColor(i);
         }
     }
+}
+
+bool GameUI::CanUsePower()
+{
+    return selectedColor != DEFAULT_COLOR_1 && selectedColor2 != DEFAULT_COLOR_2;
 }
