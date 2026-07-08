@@ -135,5 +135,11 @@ void GameUI::SelectWithMouse()
 
 bool GameUI::CanUsePower()
 {
+    if (!setuped)
+    {
+        std::cerr << "GameUI need to be setuped first\n";
+        return false;
+    }
+
     return selectedColor != DEFAULT_COLOR_1 && selectedColor2 != DEFAULT_COLOR_2;
 }

@@ -25,13 +25,14 @@ private:
 
 private:
     GameUI() = default;
+
     static void ChangeSelectedColor(const int& number);
+    static void AbilitiesUI();
+    static void Input();
+    static void SelectWithMouse();
 
 public:
     static void Setup();
     static void Update();
-    static void AbilitiesUI();
-    static void Input();
-    static void SelectWithMouse();
     static bool CanUsePower();
 };
