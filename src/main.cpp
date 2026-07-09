@@ -47,6 +47,7 @@ int main()
     
     void HorizontalMove(std::optional<std::reference_wrapper<Components::Body>>&compBody, std::optional<std::reference_wrapper<Components::Transform>>&compTrans, Components::Body::Sense sense);
 
+    Shot myShot;
     GameUI::Setup();
     while (!WindowShouldClose())
     {
@@ -70,8 +71,9 @@ int main()
             compTrans.value().get().size,
             compTrans.value().get().size
         };
-
-        Shot myShot;
+        
+        
+        myShot.Update(compTrans.value().get().position);
         
         if (IsKeyDown(KEY_D)) {
             HorizontalMove(compBody, compTrans, Components::Body::Sense::PROGRESSIVE);
@@ -84,12 +86,13 @@ int main()
         
         ClearBackground(WHITE);
         BeginDrawing();
-        myShot.DoShot(compTrans.value().get().position);
-        
-        ECS::UpdateSystem(System::RENDER);
-        GameUI::Update();
+            ECS::UpdateSystem(System::RENDER);
 
-        DrawFPS(10, 10);
+            myShot.Draw(compTrans.value().get().position);
+
+            GameUI::Update();
+
+            DrawFPS(10, 10);
         EndDrawing();
     }
 
