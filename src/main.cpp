@@ -6,6 +6,7 @@
 #include "../headers/ECS/ECS.hpp"
 #include "../headers/ECS/Collision.hpp"
 #include "../headers/GameUI.hpp"
+#include "../headers/Mecanics/Shot.hpp"
 
 constexpr int WIDTH = 1280;
 constexpr int HEIGHT = 720;
@@ -69,6 +70,8 @@ int main()
             compTrans.value().get().size,
             compTrans.value().get().size
         };
+
+        Shot myShot;
         
         if (IsKeyDown(KEY_D)) {
             HorizontalMove(compBody, compTrans, Components::Body::Sense::PROGRESSIVE);
@@ -81,6 +84,7 @@ int main()
         
         ClearBackground(WHITE);
         BeginDrawing();
+        myShot.DoShot(compTrans.value().get().position);
         
         ECS::UpdateSystem(System::RENDER);
         GameUI::Update();
